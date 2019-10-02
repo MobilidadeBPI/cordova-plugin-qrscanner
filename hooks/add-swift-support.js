@@ -12862,7 +12862,10 @@ exports.default = function (context) {
               console.log('Update IOS build setting LD_RUNPATH_SEARCH_PATHS to: @executable_path/Frameworks', 'for build configuration', buildConfig.name);
             }
 
-            if (typeof xcodeProject.getBuildProperty('SWIFT_VERSION', buildConfig.name) === 'undefined') {
+            xcodeProject.updateBuildProperty('SWIFT_VERSION', '4.0', buildConfig.name);
+                console.log('Update SWIFT version to 4.0', buildConfig.name);
+
+            /*if (typeof xcodeProject.getBuildProperty('SWIFT_VERSION', buildConfig.name) === 'undefined') {
               if (config.getPreference('UseLegacySwiftLanguageVersion', 'ios')) {
                 xcodeProject.updateBuildProperty('SWIFT_VERSION', '2.3', buildConfig.name);
                 console.log('Use legacy Swift language version', buildConfig.name);
@@ -12873,7 +12876,7 @@ exports.default = function (context) {
               } else {
                 xcodeProject.updateBuildProperty('SWIFT_VERSION', '3.0', buildConfig.name);
                 console.log('Update SWIFT version to 3.0', buildConfig.name);
-              }
+              }*/
             }
 
             if (buildConfig.name === 'Debug') {
