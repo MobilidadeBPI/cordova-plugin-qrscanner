@@ -32,8 +32,7 @@
     <config-file target="config.xml" parent="/*">
       <preference name="UseSwiftLanguageVersion" value="4" />
       </config-file>
-    <hook type="before_build" src="hooks/add_swift_support.js" />
-    <!--dependency id="cordova-plugin-add-swift-support" url="https://github.com/MobilidadeBPI/cordova-plugin-add-swift-support" spec="~2.0.2" /-->
+    <dependency id="cordova-plugin-add-swift-support" url="https://github.com/MobilidadeBPI/cordova-plugin-add-swift-support" spec="~2.0.2" />
     <source-file src="src/ios/QRScanner.swift"/>
     <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
       <string>The camera is used to scan QR codes.</string>
